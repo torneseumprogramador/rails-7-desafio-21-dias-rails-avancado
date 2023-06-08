@@ -1,0 +1,36 @@
+<!-- Panel (Spotlight) -->
+<section class="panel spotlight medium right" style="background: #907190;">
+	<div class="content span-7">
+
+    <h1>Clientes</h1>
+    <hr style="margin: 0px;">
+    <p style="color: green"><%= notice %></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clientes.each do |cliente| %>
+          <tr>
+            <td><%= cliente.id %></td>
+            <td><%= cliente.nome %></td>
+            <td><%= cliente.telefone %></td>
+            <td><%= cliente.endereco %></td>
+            <td>
+              <%= link_to "Mostrar", cliente %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= link_to "Novo Cliente", new_cliente_path %>
+  </div>
+</section>
