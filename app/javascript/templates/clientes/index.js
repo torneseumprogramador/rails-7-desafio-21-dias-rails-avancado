@@ -1,5 +1,8 @@
 export default function renderClientesTable(clientes) {
     return `
+        <h1>Lista de clientes</h1>
+        <a href="#">Novo Cliente</a>
+        <hr>
         <table>
             <thead>
                 <tr>
