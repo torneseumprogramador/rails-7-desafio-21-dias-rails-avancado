@@ -8,7 +8,7 @@ export default class extends Controller {
   async loadClientes() {
     const clientes = await (await fetch('http://localhost:3000/clientes.json')).json();
     const html = this.renderClientesTable(clientes);
-    this.tableTarget.innerHTML = html;
+    this.element.innerHTML = html;
   }
 
   renderClientesTable(clientes) {
