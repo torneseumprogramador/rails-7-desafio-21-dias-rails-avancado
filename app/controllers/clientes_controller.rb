@@ -3,7 +3,14 @@ class ClientesController < ApplicationController
 
   # GET /clientes or /clientes.json
   def index
-    @clientes = Cliente.all
+    page = params[:pagina].to_i || 1
+    page = 1 if page < 1
+
+    quantidade_por_pagina = 3
+
+    offset = (page-1) * quantidade_por_pagina
+
+    @clientes = Cliente.order(id: :desc).limit(quantidade_por_pagina).offset(offset)
   end
 
   # GET /clientes/1 or /clientes/1.json
