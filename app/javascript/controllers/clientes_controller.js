@@ -1,9 +1,12 @@
 import { Controller } from "@hotwired/stimulus";
+import { Cliente } from "../models/cliente";
+import { ClienteServico } from "../servicos/clientes_servico";
 import renderClientesTable from "../templates/clientes/index";
 import renderClientesForm from "../templates/clientes/new";
 
 export default class extends Controller {
   connect() {
+    this.cliente = new Cliente()
     this.paginaCorrente = 1
     this.loadClientes();
   }
@@ -22,8 +25,8 @@ export default class extends Controller {
   async loadClientes(event) {
     if(event) event.preventDefault();
     
-    this.cliente = {id: 0, nome: "", telefone: "", endereco: ""}
-    const clientes = await (await fetch(`http://localhost:3000/clientes.json?pagina=${this.paginaCorrente}`)).json();
+    this.cliente = new Cliente()
+    const clientes = await ClienteServico.todos(this.paginaCorrente);
     this.element.innerHTML = renderClientesTable(clientes, this.paginaCorrente);
   }
 
@@ -37,19 +40,9 @@ export default class extends Controller {
     event.preventDefault();
     const cliente = JSON.parse(event.currentTarget.dataset.cliente);
     if(confirm("Deseja realmente excluir ?")){
-
+      
       const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-      const payload = {
-        authenticity_token: csrfToken
-      };
-
-      const requestOptions = {
-        method: 'DELETE',
-        body: JSON.stringify(payload),
-        headers: { 'Content-Type': 'application/json' }
-      };
-      const url = `http://localhost:3000/clientes/${cliente.id}.json`;
-      await fetch(url, requestOptions);
+      await ClienteServico.delete(cliente.id, csrfToken)
 
       this.loadClientes();
     }
@@ -81,27 +74,7 @@ export default class extends Controller {
     this.cliente.endereco = document.getElementById("cliente_endereco").value;
   
     const authenticity_token = document.querySelector('input[name="authenticity_token"]').value
-    const payload = {
-      cliente: this.cliente,
-      authenticity_token: authenticity_token
-    };
-
-    const requestOptions = {
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    };
-
-    let url = 'http://localhost:3000/clientes.json';
-    
-    if(this.cliente.id < 1)
-      requestOptions.method = 'POST'
-    else{
-      requestOptions.method = 'PUT'
-      url = `http://localhost:3000/clientes/${this.cliente.id}.json`;
-    }
-  
-    await (await fetch(url, requestOptions)).json();
-
+    await ClienteServico.salvar(this.cliente, authenticity_token)
     this.loadClientes();
   }  
 }
