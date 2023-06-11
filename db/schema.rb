@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_084225) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_11_092538) do
   create_table "clientes", charset: "utf8mb3", force: :cascade do |t|
     t.string "nome", limit: 150
     t.string "telefone", limit: 20
     t.string "endereco"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "fornecedores", charset: "utf8mb3", force: :cascade do |t|
+    t.string "nome", limit: 150
+    t.string "cnpj", limit: 20
+    t.string "endereco"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "razao_social", limit: 150
   end
 
 end
