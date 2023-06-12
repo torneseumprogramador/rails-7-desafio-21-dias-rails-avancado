@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get 'fornecedores', to: 'fornecedores#index', as: 'fornecedores'
   get 'fornecedores/novo', to: 'fornecedores#novo', as: 'fornecedores_novo'
+  post 'fornecedores', to: 'fornecedores#cadastrar', as: 'fornecedores_cadastrar'
+  get 'fornecedores/:id/editar', to: 'fornecedores#editar', as: 'fornecedores_editar'
 end

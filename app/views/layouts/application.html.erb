@@ -25,6 +25,14 @@
     <div id="page-wrapper">
      	<!-- Wrapper -->
         <div id="wrapper">
+			<% if notice.present? %>
+				<p class="notice"><%= notice %></p>
+			<% end %>
+
+			<% if flash[:error].present? %>
+				<p class="error"><%= flash[:error] %></p>
+			<% end %>
+			
 			<%= yield %>
 		</div>
 	</div>

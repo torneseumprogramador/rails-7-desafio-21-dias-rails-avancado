@@ -4,22 +4,23 @@
 
     <a href="<%= fornecedores_path %>">Lista de Fornecedores</a><br>
     
-    <form action="/fornecedores" method="post">
+    <form action="<%= fornecedores_cadastrar_path %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <div>
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="fornecedor[nome]" >
       </div>
       <div>
         <label for="nome">Razão Social:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="fornecedor[razao_social]" required>
       </div>
       <div>
         <label for="cnpj">CNPJ:</label>
-        <input type="text" id="cnpj" name="cnpj" required>
+        <input type="text" id="cnpj" name="fornecedor[cnpj]" required>
       </div>
       <div>
         <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" required>
+        <input type="text" id="endereco" name="fornecedor[endereco]" required>
       </div>
       <br>
       <div>
