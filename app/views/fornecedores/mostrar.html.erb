@@ -1,0 +1,25 @@
+<section class="panel banner right">
+  <div class="content color0 span-3-75">
+    <h1>Fornecedor</h1>
+
+    <a href="<%= fornecedores_path %>">Lista de Fornecedores</a><br>
+
+    <div>
+      Nome: <%= @fornecedor.nome %>
+    </div>
+    <div>
+      Razão Social: <%= @fornecedor.razao_social %>
+    </div>
+    <div>
+      CNPJ: <%= @fornecedor.cnpj %>
+    </div>
+    <div>
+      Endereço: <%= @fornecedor.endereco %>
+    </div>
+
+  </div>
+
+  <div class="image filtered span-1-75" data-position="25% 25%">
+    <img src="/images/pic01.jpg" alt="" />
+  </div>
+</section>

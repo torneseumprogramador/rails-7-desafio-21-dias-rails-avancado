@@ -3,7 +3,7 @@
     <a href="/">Voltar para home</a><br>
     <h1>Fornecedores</h1>
 
-    <a href="<%= fornecedores_novo_path %>">Novo Fornecedor</a><br>
+    <a href="<%= fornecedor_novo_path %>">Novo Fornecedor</a><br>
 
     <table>
       <thead>
@@ -19,14 +19,15 @@
       <tbody>
         <% @fornecedores.each do |fornecedor| %>
           <tr>
-            <td><%= fornecedor.id %></td>
+            <td><a href="<%= fornecedor_mostrar_path(fornecedor) %>"> <%= fornecedor.id %> </a></td>
             <td><%= fornecedor.nome %></td>
             <td><%= fornecedor.razao_social %></td>
             <td><%= fornecedor.cnpj %></td>
             <td><%= fornecedor.endereco %></td>
             <td>
-                <a href="<%= fornecedores_editar_path(fornecedor) %>" class="btn">Alterar</a>
-                <a href="#" class="btn">Excluir</a>
+                <a href="<%= fornecedor_editar_path(fornecedor) %>" class="btn">Alterar</a>
+                <!-- a href="#" onclick="excluir('<%= fornecedor_excluir_path(fornecedor) %>', '<%= fornecedores_path %>')" class="btn">Excluir</a -->
+                <a href="#" data-excluir="<%= fornecedor_excluir_path(fornecedor) %>" class="btn">Excluir</a>
             </td>
           </tr>
         <% end %>
