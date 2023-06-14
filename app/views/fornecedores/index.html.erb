@@ -27,7 +27,7 @@
             <td>
                 <a href="<%= fornecedor_editar_path(fornecedor) %>" class="btn">Alterar</a>
                 <!-- a href="#" onclick="excluir('<%= fornecedor_excluir_path(fornecedor) %>', '<%= fornecedores_path %>')" class="btn">Excluir</a -->
-                <a href="#" data-excluir="<%= fornecedor_excluir_path(fornecedor) %>" class="btn">Excluir</a>
+                <a href="#" data-excluir="<%= fornecedor_excluir_path(fornecedor, format: :json) %>" class="btn">Excluir</a>
             </td>
           </tr>
         <% end %>

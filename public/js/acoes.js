@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", verificarCarregamento);
 
 const deletePorDataAnotation = () => {
   const elementos = document.querySelectorAll('[data-excluir]');
+  if(!elementos || elementos.length === 0) return;
+  
   for(const elemento of elementos) {
     elemento.onclick = (event) =>{
       event.preventDefault();
@@ -20,6 +22,7 @@ const deletePorDataAnotation = () => {
 
 const putPorDataAnotation = () => {
   const form = document.querySelector('[data-put-com-redirect]');
+  if (!form) return;
   form.onsubmit = (event) =>{
     event.preventDefault();
     alterar(event.target)
@@ -59,10 +62,13 @@ const excluir = async (url, url_redirect) => {
         if(url_redirect) window.location.href = url_redirect
         else window.location.reload()
       } else {
-        throw new Error('Erro ao excluir o fornecedor');
+        mensagem = await response.json()
+        throw new Error('Erro ao excluir o fornecedor ' + JSON.stringify(mensagem));
       }
     } catch (error) {
       console.error(error);
+      alert(error.message)
+      window.location.reload()
     }
   }
 }
