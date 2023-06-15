@@ -1,4 +1,4 @@
-class ClienteController {
+class ClientesController {
     constructor($elemento){
         this.$elemento = $elemento;
         this.init();
