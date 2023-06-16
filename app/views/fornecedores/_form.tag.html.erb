@@ -1,0 +1,24 @@
+<a href="<%= fornecedores_path %>">Lista de Fornecedores</a><br>
+
+<%= form_tag @fornecedor do %>
+  <div>
+    <%= label_tag :nome %>
+    <%= text_field_tag "fornecedor[nome]" %>
+  </div>
+  <div>
+    <%= label_tag :razao_social %>
+    <%= text_field_tag :razao_social %>
+  </div>
+  <div>
+    <%= label_tag :cnpj %>
+    <%= text_field_tag :cnpj %>
+  </div>
+  <div>
+    <%= label_tag :endereco %>
+    <%= text_field_tag :endereco %>
+  </div>
+  <br>
+  <div>
+    <%= submit_tag "Salvar" %>
+  </div>
+<% end %>

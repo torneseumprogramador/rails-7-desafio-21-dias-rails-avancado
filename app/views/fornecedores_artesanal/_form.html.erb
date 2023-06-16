@@ -1,0 +1,25 @@
+<a href="<%= fornecedores_path %>">Lista de Fornecedores</a><br>
+
+<form action="<%= url %>" <% if method == 'put' %> data-put-com-redirect="<%= fornecedores_path %>" <% else %> method="<%= method %>" <% end %>>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" value="<%= @fornecedor.nome %>" name="fornecedor[nome]" >
+  </div>
+  <div>
+    <label for="nome">Razão Social:</label>
+    <input type="text" id="nome" value="<%= @fornecedor.razao_social %>" name="fornecedor[razao_social]" required>
+  </div>
+  <div>
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" id="cnpj" value="<%= @fornecedor.cnpj %>" name="fornecedor[cnpj]" required>
+  </div>
+  <div>
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" value="<%= @fornecedor.endereco %>" name="fornecedor[endereco]" required>
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Salvar">
+  </div>
+</form>

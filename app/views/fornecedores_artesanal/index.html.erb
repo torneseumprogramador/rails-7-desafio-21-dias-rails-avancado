@@ -1,0 +1,42 @@
+<section class="panel banner right">
+  <div class="content color0 span-3-75">
+    <a href="/">Voltar para home</a><br>
+    <h1>Fornecedores</h1>
+
+    <a href="<%= fornecedor_novo_path %>">Novo Fornecedor</a><br>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Razão Social</th>
+          <th>CNPJ</th>
+          <th>Endereço</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @fornecedores.each do |fornecedor| %>
+          <tr>
+            <td><a href="<%= fornecedor_mostrar_path(fornecedor) %>"> <%= fornecedor.id %> </a></td>
+            <td><%= fornecedor.nome %></td>
+            <td><%= fornecedor.razao_social %></td>
+            <td><%= fornecedor.cnpj %></td>
+            <td><%= fornecedor.endereco %></td>
+            <td>
+                <a href="<%= fornecedor_editar_path(fornecedor) %>" class="btn">Alterar</a>
+                <!-- a href="#" onclick="excluir('<%= fornecedor_excluir_path(fornecedor) %>', '<%= fornecedores_path %>')" class="btn">Excluir</a -->
+                <a href="#" data-excluir="<%= fornecedor_excluir_path(fornecedor, format: :json) %>" class="btn">Excluir</a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="image filtered span-1-75" data-position="25% 25%">
+    <img src="/images/pic01.jpg" alt="" />
+  </div>
+</section>

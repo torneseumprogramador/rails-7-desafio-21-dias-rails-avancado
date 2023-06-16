@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'fornecedores', to: 'fornecedores#index', as: 'fornecedores'
   get 'fornecedores/:id', to: 'fornecedores#mostrar', as: 'fornecedor_mostrar'
   post 'fornecedores', to: 'fornecedores#cadastrar', as: 'fornecedor_cadastrar'
-  put 'fornecedores/:id', to: 'fornecedores#alterar', as: 'fornecedor_alterar'
+  match 'fornecedores/:id', to: 'fornecedores#alterar', as: 'fornecedor', via: [:put, :patch]
   delete 'fornecedores/:id', to: 'fornecedores#excluir', as: 'fornecedor_excluir'
   #######################
 end
