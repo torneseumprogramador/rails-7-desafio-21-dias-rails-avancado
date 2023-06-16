@@ -12,8 +12,8 @@ class ClientesController {
         $.getScript('/js/jquery-desafio/templates/clientes/index.html.js', () => {
             $.getScript('/js/jquery-desafio/models/cliente.js', () => {
                 $.getScript('/js/jquery-desafio/servicos/clientes_servico.js', async () => {
-                    const clientes = await ClienteServico.todos(this.paginaCorrente);
                     const paginaCorrente = 0
+                    const clientes = await ClienteServico.todos(paginaCorrente);
                     this.$elemento.html(indexTemplate(clientes, paginaCorrente));
                     this.setActions()
                 });

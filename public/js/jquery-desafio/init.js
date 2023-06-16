@@ -1,4 +1,4 @@
-function transformarNome(nome) {
+const transformarNome = (nome) => {
   return '/js/jquery-desafio/controllers/' + nome.replace(/[A-Z]/g, (match, offset) => {
     if (offset === 0) {
       return match.toLowerCase();

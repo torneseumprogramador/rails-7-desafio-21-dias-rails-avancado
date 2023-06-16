@@ -3,9 +3,9 @@
 # Feitos
 - JSON para restful
 - jquery
+- FORM With do rails
 
 # a fazer
-- FORM With do rails
 - hotwire
 - viewcomponent
 - colocar app no padrão Unit Of Work (Não usando activerecord)
