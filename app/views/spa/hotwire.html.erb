@@ -1,0 +1,14 @@
+<section class="panel banner right">
+	<div class="content color0 span-3-75">
+
+		<a href="javascript:;" onclick="carregarPedacoDeCodigoManualmenteVanilla()">Carregar manualmente</a>
+		<%= link_to "Carregar usando hotwire", hotwire_template_path, 'data-turbo-frame': 'tasks' %>
+	  
+		<%= turbo_frame_tag 'tasks' do %>
+			Aqui vai carregar minhas informações
+		<% end %>
+	</div>
+	<div class="image filtered span-1-75" data-position="25% 25%">
+		<img src="/images/pic01.jpg" alt="" />
+	</div>
+</section>

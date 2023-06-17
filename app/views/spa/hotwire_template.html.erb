@@ -1,0 +1,9 @@
+<%= turbo_frame_tag 'tasks' do %>
+    <h1>Clientes do HotWire</h1>
+    <ul>
+      <% @clientes.each do |clientes| %>
+        <li><%= clientes.nome %></li>
+      <% end %>
+    </ul>
+<% end %>
+  

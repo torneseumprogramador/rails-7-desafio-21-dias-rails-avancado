@@ -160,3 +160,28 @@ const serialize = (form) => {
 
   return q;
 };
+
+
+const carregarPedacoDeCodigoManualmenteVanilla = async () => {
+  const response = await fetch('/carregando-pedaco-codigo');
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  document.getElementById("tasks").innerHTML = await response.text();
+}
+
+
+const carregarPedacoDeCodigoManualmenteJQuery = () => {
+  $.ajax({
+    url: '/carregando-pedaco-codigo',
+    method: 'GET',
+    success: function(data) {
+      $('#tasks').html(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log(`HTTP error! status: ${jqXHR.status}, message: ${errorThrown}`);
+    }
+  });
+}

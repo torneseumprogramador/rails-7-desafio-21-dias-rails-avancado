@@ -4,10 +4,10 @@
 - JSON para restful
 - jquery
 - FORM With do rails
-
-# a fazer
 - hotwire
 - viewcomponent
+
+# a fazer
 - colocar app no padrão Unit Of Work (Não usando activerecord)
 - activerecord avançado
 - design pattern ruby

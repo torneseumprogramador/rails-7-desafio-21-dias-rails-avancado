@@ -11,6 +11,14 @@ class ClientesController < ApplicationController
     offset = (page-1) * quantidade_por_pagina
 
     @clientes = Cliente.order(id: :desc).limit(quantidade_por_pagina).offset(offset)
+
+    respond_to do |format|
+      format.turbo_stream { 
+        render turbo_stream: turbo_stream.append(:clientes, partial: 'clientes/clientes_hotwire', locals: { clientes: @clientes })
+      }
+
+      format.html { render :index }
+    end
   end
 
   # GET /clientes/1 or /clientes/1.json

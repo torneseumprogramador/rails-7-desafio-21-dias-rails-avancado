@@ -4,30 +4,34 @@
     <h1>Clientes</h1>
     <hr style="margin: 0px;">
 
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Telefone</th>
-          <th>Endereço</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @clientes.each do |cliente| %>
+		<%= link_to "Carregar clientes hotwire", clientes_path, 'data-turbo-frame': 'clientes' %>
+
+		<%= turbo_frame_tag 'clientes' do %>
+      <table>
+        <thead>
           <tr>
-            <td><%= cliente.id %></td>
-            <td><%= cliente.nome %></td>
-            <td><%= cliente.telefone %></td>
-            <td><%= cliente.endereco %></td>
-            <td>
-              <%= link_to "Mostrar", cliente %>
-            </td>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @clientes.each do |cliente| %>
+            <tr>
+              <td><%= cliente.id %></td>
+              <td><%= cliente.nome %></td>
+              <td><%= cliente.telefone %></td>
+              <td><%= cliente.endereco %></td>
+              <td>
+                <%= link_to "Mostrar", cliente %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
 
     <%= link_to "Novo Cliente", new_cliente_path %>
   </div>
