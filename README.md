@@ -7,14 +7,15 @@
 - hotwire
 - viewcomponent
 - colocar app no padrão Unit Of Work (Não usando activerecord)
+- design pattern ruby
 
 # a fazer
 - activerecord avançado
-- design pattern ruby
-- trabalhando com fila .... 
-- outros da ementa ....
+- concerns
+- cookies
+- device
+- gems
 - rails API
 - token jwt
-- device
-- cookies
-- gems
+- trabalhando com fila .... 
+- outros da ementa ....

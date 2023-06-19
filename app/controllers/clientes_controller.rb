@@ -2,15 +2,60 @@ class ClientesController < ApplicationController
   before_action :set_cliente, only: %i[ show edit update destroy ]
 
   # GET /clientes or /clientes.json
+  # def index
+  #   page = params[:pagina].to_i || 1
+  #   page = 1 if page < 1
+
+  #   quantidade_por_pagina = 3
+
+  #   offset = (page-1) * quantidade_por_pagina
+
+  #   @clientes = Cliente.order(id: :desc).limit(quantidade_por_pagina).offset(offset)
+
+  #   respond_to do |format|
+  #     format.turbo_stream { 
+  #       render turbo_stream: turbo_stream.append(:clientes, partial: 'clientes/clientes_hotwire', locals: { clientes: @clientes })
+  #     }
+
+  #     format.html { render :index }
+  #   end
+  # end
+
+
+
   def index
-    page = params[:pagina].to_i || 1
-    page = 1 if page < 1
+    repo = Repositorios::ClientesRepositorio.new
 
-    quantidade_por_pagina = 3
+    # cliente1 = Entidades::Cliente.new
+    # cliente1.nome = "Luiz"
+    # cliente1.telefone = "11111111"
+    # cliente1.endereco = "Rua do Luiz"
 
-    offset = (page-1) * quantidade_por_pagina
+    # repo.salvar(cliente1)
 
-    @clientes = Cliente.order(id: :desc).limit(quantidade_por_pagina).offset(offset)
+    # cliente2 = Entidades::Cliente.new
+    # cliente2.id = 2
+    # cliente2.nome = "Luiz Santos"
+    # cliente2.telefone = "11111111"
+    # cliente2.endereco = "Rua do Luiz"
+
+    # repo.salvar(cliente2)
+
+    # cliente_erro = Entidades::Cliente.new
+    # cliente_erro.telefone = "11111111"
+    # cliente_erro.endereco = "Rua do Luiz"
+
+    # begin
+    #   repo.salvar!(cliente_erro)
+    # rescue Servicos::Erros::ValidarErros => erro
+    #   flash["error"] = "Erro na minha validação - #{erro.message}"
+    #   return redirect_to "/stimulus"
+    # rescue Exception => erro
+    #   flash["error"] = erro.message
+    #   return redirect_to "/stimulus"
+    # end
+
+    @clientes = repo.todos(params[:pagina])
 
     respond_to do |format|
       format.turbo_stream { 
@@ -20,6 +65,33 @@ class ClientesController < ApplicationController
       format.html { render :index }
     end
   end
+
+
+  # def index
+  #   repo = Repositorios::ClientesActiveRecordRepositorio.new(Cliente)
+
+  #   # cliente1 = Cliente.new
+  #   # cliente1.nome = "Luiz 4"
+  #   # cliente1.telefone = "11111111"
+  #   # cliente1.endereco = "Rua do Luiz"
+
+  #   # repo.salvar(cliente1)
+
+  #   # cliente2 = repo.busca_por_id(2)
+  #   # cliente2.nome = "Luiz Santos"
+
+  #   # repo.salvar(cliente2)
+
+  #   @clientes = repo.todos(params[:pagina])
+
+  #   respond_to do |format|
+  #     format.turbo_stream { 
+  #       render turbo_stream: turbo_stream.append(:clientes, partial: 'clientes/clientes_hotwire', locals: { clientes: @clientes })
+  #     }
+
+  #     format.html { render :index }
+  #   end
+  # end
 
   # GET /clientes/1 or /clientes/1.json
   def show
