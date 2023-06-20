@@ -17,6 +17,7 @@
 - device
 - gems
 - rails API
+- rotas encadeadas
 - token jwt
 - trabalhando com fila .... 
 - outros da ementa ....
