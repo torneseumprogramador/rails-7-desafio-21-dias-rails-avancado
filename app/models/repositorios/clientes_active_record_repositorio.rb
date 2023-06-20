@@ -12,7 +12,7 @@ module Repositorios
     end
 
     def busca_por_id(id)
-      @cliente.find(2)
+      @cliente.find(id)
     end
 
     def todos(pagina = 1)

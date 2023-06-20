@@ -81,6 +81,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    choice (0.2.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -88,6 +89,8 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    faker (3.2.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -152,6 +155,11 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-erd (1.7.2)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
@@ -167,6 +175,8 @@ GEM
     reline (0.3.5)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby-graphviz (1.2.5)
+      rexml
     rubyzip (2.3.2)
     selenium-webdriver (4.9.1)
       rexml (~> 3.2, >= 3.2.5)
@@ -202,6 +212,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.8)
@@ -213,11 +224,13 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  faker
   importmap-rails
   jbuilder
   mysql2
   puma (~> 5.0)
   rails (~> 7.0.5)
+  rails-erd
   selenium-webdriver
   sprockets-rails
   stimulus-rails
@@ -225,6 +238,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  will_paginate
 
 RUBY VERSION
    ruby 3.2.2p53

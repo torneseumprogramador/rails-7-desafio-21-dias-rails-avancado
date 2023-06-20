@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_11_092538) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_20_083829) do
   create_table "clientes", charset: "utf8mb3", force: :cascade do |t|
     t.string "nome", limit: 150
     t.string "telefone", limit: 20
@@ -28,4 +28,37 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_092538) do
     t.string "razao_social", limit: 150
   end
 
+  create_table "pedido_produtos", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "pedido_id", null: false
+    t.bigint "produto_id", null: false
+    t.float "valor"
+    t.integer "quantidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pedido_id"], name: "index_pedido_produtos_on_pedido_id"
+    t.index ["produto_id"], name: "index_pedido_produtos_on_produto_id"
+  end
+
+  create_table "pedidos", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "cliente_id", null: false
+    t.float "valor_total"
+    t.datetime "data"
+    t.text "endereco_completo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cliente_id"], name: "index_pedidos_on_cliente_id"
+  end
+
+  create_table "produtos", charset: "utf8mb3", force: :cascade do |t|
+    t.string "nome", limit: 100
+    t.text "descricao"
+    t.float "valor"
+    t.integer "quantidade_estoque"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "pedido_produtos", "pedidos"
+  add_foreign_key "pedido_produtos", "produtos"
+  add_foreign_key "pedidos", "clientes"
 end

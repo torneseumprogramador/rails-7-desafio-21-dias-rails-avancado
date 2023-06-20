@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente: one
+  valor_total: 1.5
+  data: 2023-06-20 05:37:36
+  endereco_completo: MyText
+
+two:
+  cliente: two
+  valor_total: 1.5
+  data: 2023-06-20 05:37:36
+  endereco_completo: MyText

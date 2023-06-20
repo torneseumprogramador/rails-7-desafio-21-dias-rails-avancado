@@ -8,9 +8,10 @@
 - viewcomponent
 - colocar app no padrão Unit Of Work (Não usando activerecord)
 - design pattern ruby
+- activerecord avançado
 
 # a fazer
-- activerecord avançado
+- validations
 - concerns
 - cookies
 - device
