@@ -10,11 +10,12 @@
 - design pattern ruby
 - activerecord avançado
 
-# a fazer
 - validations
 - concerns
+
+# a fazer
 - cookies
-- device
+- device (e manual)
 - gems
 - rails API
 - token jwt

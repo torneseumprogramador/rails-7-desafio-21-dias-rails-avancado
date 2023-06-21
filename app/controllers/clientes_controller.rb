@@ -1,6 +1,8 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: %i[ show edit update destroy ]
 
+  include SalvarObjeto
+
   # GET /clientes or /clientes.json
   # def index
   #   page = params[:pagina].to_i || 1
@@ -111,7 +113,7 @@ class ClientesController < ApplicationController
     @cliente = Cliente.new(cliente_params)
 
     respond_to do |format|
-      if @cliente.save
+      if salvar(@cliente)
         format.html { redirect_to cliente_url(@cliente), notice: "Cliente was successfully created." }
         format.json { render :show, status: :created, location: @cliente }
       else
