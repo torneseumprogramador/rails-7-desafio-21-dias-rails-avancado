@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :alunos
   resources :pedido_produtos
   resources :pedidos
   resources :produtos
@@ -11,15 +12,18 @@ Rails.application.routes.draw do
   get 'login', to: 'login#index'
   post 'acao-login', to: 'login#acao_login'
   get 'sair', to: 'login#sair'
+  #### autenticar aluno 
+  get 'autenticar', to: 'autenticar#index'
+  post 'signin', to: 'autenticar#signin'
+  get 'signout', to: 'autenticar#signout'
+  #### autenticar aluno fim
   
   get 'hotwire', to: 'spa#hotwire'
   get 'hotwire_template', to: 'spa#hotwire_template', as: 'hotwire_template'
 
   get 'carregando-pedaco-codigo', to: 'spa#carregando_pedaco_codigo'
 
-  
   root "home#index"
-
 
   get 'fornecedores/novo', to: 'fornecedores#novo', as: 'fornecedor_novo'
   get 'fornecedores/:id/editar', to: 'fornecedores#editar', as: 'fornecedor_editar'

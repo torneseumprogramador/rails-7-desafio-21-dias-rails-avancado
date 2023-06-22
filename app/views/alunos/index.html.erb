@@ -1,0 +1,38 @@
+<section class="panel banner right">
+  <div class="content color0 span-3-75">
+    <a href="/">Voltar para home</a><br>
+    <h1>Alunos</h1>
+
+    <a href="<%= new_aluno_path %>">Novo Aluno</a><br>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @alunos.each do |aluno| %>
+          <tr>
+            <td><a href="<%= aluno_path(aluno) %>"> <%= aluno.id %> </a></td>
+            <td><%= aluno.nome %></td>
+            <td><%= aluno.email %></td>
+            <td>
+              <a href="<%= edit_aluno_path(aluno) %>" class="btn">Alterar</a>
+              <%= link_to 'Excluir', aluno_path(aluno), method: :delete, data: { confirm: 'Tem certeza que deseja excluir este aluno?' }%>
+
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="image filtered span-1-75" data-position="25% 25%">
+    <img src="/images/pic01.jpg" alt="" />
+  </div>
+</section>

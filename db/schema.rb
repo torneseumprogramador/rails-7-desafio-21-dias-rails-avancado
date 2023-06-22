@@ -10,8 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_21_090413) do
-  create_table "clientes", charset: "utf8mb3", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_211456) do
+  create_table "alunos", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
+    t.string "nome"
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clientes", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.string "nome", limit: 150
     t.string "telefone", limit: 20
     t.string "endereco"
@@ -20,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_21_090413) do
     t.boolean "ativo", default: true
   end
 
-  create_table "fornecedores", charset: "utf8mb3", force: :cascade do |t|
+  create_table "fornecedores", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.string "nome", limit: 150
     t.string "cnpj", limit: 20
     t.string "endereco"
@@ -29,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_21_090413) do
     t.string "razao_social", limit: 150
   end
 
-  create_table "pedido_produtos", charset: "utf8mb3", force: :cascade do |t|
+  create_table "pedido_produtos", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.bigint "pedido_id", null: false
     t.bigint "produto_id", null: false
     t.float "valor"
@@ -40,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_21_090413) do
     t.index ["produto_id"], name: "index_pedido_produtos_on_produto_id"
   end
 
-  create_table "pedidos", charset: "utf8mb3", force: :cascade do |t|
+  create_table "pedidos", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.bigint "cliente_id", null: false
     t.float "valor_total"
     t.datetime "data"
@@ -50,7 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_21_090413) do
     t.index ["cliente_id"], name: "index_pedidos_on_cliente_id"
   end
 
-  create_table "produtos", charset: "utf8mb3", force: :cascade do |t|
+  create_table "produtos", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.string "nome", limit: 100
     t.text "descricao"
     t.float "valor"
