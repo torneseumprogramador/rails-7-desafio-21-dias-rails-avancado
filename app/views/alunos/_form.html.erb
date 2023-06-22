@@ -1,0 +1,21 @@
+<a href="<%= alunos_path %>">Lista de Alunos</a><br>
+
+<%= form_with(model: @aluno) do |form| %>
+  <div>
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit "Salvar" %>
+  </div>
+<!--/form-->
+<% end %>
