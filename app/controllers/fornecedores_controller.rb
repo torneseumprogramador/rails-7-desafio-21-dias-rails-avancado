@@ -1,4 +1,4 @@
-class FornecedoresController < ApplicationController
+class FornecedoresController < ApplicationLoginController
 # class FornecedoresController < ApplicationSeguroController # caso queria usar uma abstração de controller isolado
   
   #### para desabilitar para todas as ações json somente

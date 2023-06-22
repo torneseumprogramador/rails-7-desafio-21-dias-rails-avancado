@@ -1,4 +1,4 @@
-class PedidoProdutosController < ApplicationController
+class PedidoProdutosController < ApplicationLoginController
   before_action :set_pedido_produto, only: %i[ show edit update destroy ]
 
   # GET /pedido_produtos or /pedido_produtos.json

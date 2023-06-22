@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get 'stimulus', to: 'spa#stimulus'
   get 'jquery', to: 'spa#jquery'
 
+  get 'login', to: 'login#index'
+  post 'acao-login', to: 'login#acao_login'
+  get 'sair', to: 'login#sair'
+  
   get 'hotwire', to: 'spa#hotwire'
   get 'hotwire_template', to: 'spa#hotwire_template', as: 'hotwire_template'
 

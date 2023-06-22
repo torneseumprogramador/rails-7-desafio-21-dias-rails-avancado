@@ -1,4 +1,4 @@
-class ClientesController < ApplicationController
+class ClientesController < ApplicationLoginController
   before_action :set_cliente, only: %i[ show edit update destroy ]
 
   include SalvarObjeto

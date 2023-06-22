@@ -9,12 +9,11 @@
 - colocar app no padrão Unit Of Work (Não usando activerecord)
 - design pattern ruby
 - activerecord avançado
-
 - validations
 - concerns
+- cookies
 
 # a fazer
-- cookies
 - device (e manual)
 - gems
 - rails API
