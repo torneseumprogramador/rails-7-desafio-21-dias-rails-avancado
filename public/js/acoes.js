@@ -1,6 +1,7 @@
 const verificarCarregamento = () => {
   deletePorDataAnotation();
   putPorDataAnotation();
+  reconhecerAnnotationsLink();
 }
 
 // Adiciona um evento ao carregamento da página
@@ -15,7 +16,8 @@ const deletePorDataAnotation = () => {
       event.preventDefault();
       const elen = event.target
       const url = elen.getAttribute("data-excluir")
-      excluir(url)
+      const redirect = elen.getAttribute("data-redirect")
+      excluir(url, redirect)
     }
   }
 }
@@ -50,28 +52,56 @@ const alterar = async (form) => {
 };
 
 
-const excluir = async (url, url_redirect) => {
+const excluir = (url, url_redirect) => {
   if(confirm("Confirma ?")){
-    try {
-      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-      const response = await fetch(`${url}?authenticity_token=${encodeURIComponent(csrfToken)}`, {
-        method: 'DELETE'
-      });
-
-      if (response.ok) {
-        if(url_redirect) window.location.href = url_redirect
-        else window.location.reload()
-      } else {
-        mensagem = await response.json()
-        throw new Error('Erro ao excluir o fornecedor ' + JSON.stringify(mensagem));
-      }
-    } catch (error) {
-      console.error(error);
-      alert(error.message)
-      window.location.reload()
-    }
+    excluirCore(url, url_redirect);
   }
 }
+
+const excluirCore = async (url, url_redirect) => {
+  try {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const response = await fetch(`${url}?authenticity_token=${encodeURIComponent(csrfToken)}`, {
+      method: 'DELETE'
+    });
+
+    if (response.ok) {
+      if(url_redirect) window.location.href = url_redirect
+      else window.location.reload()
+    } else {
+      mensagem = await response.json()
+      throw new Error('Erro ao excluir o fornecedor ' + JSON.stringify(mensagem));
+    }
+  } catch (error) {
+    console.error(error);
+    alert(error.message)
+    window.location.reload()
+  }
+}
+
+const reconhecerAnnotationsLink = () => {
+  const link = document.querySelector('[data-method="delete"]');
+  if (!link) return;
+
+  link.removeEventListener("click", clickDelete);
+  link.addEventListener("click", clickDelete);
+}
+
+const clickDelete = (event) => {
+  event.preventDefault();
+  const link = event.target;
+  const url = link.getAttribute("href");
+  const confirmMessage = link.getAttribute("data-confirm");
+  if(confirmMessage){
+    if (confirm(confirmMessage)) {
+      excluirCore(url);
+    }
+  }
+  else{
+    excluirCore(url);
+  }
+}
+
 
 function transformarObjeto(formObj) {
   const novoObjeto = {};

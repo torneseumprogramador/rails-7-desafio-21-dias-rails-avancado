@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_21_090413) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_23_082434) do
   create_table "clientes", charset: "utf8mb3", force: :cascade do |t|
     t.string "nome", limit: 150
     t.string "telefone", limit: 20
@@ -57,6 +57,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_21_090413) do
     t.integer "quantidade_estoque"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "useres", charset: "utf8mb3", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_useres_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_useres_on_reset_password_token", unique: true
   end
 
   add_foreign_key "pedido_produtos", "pedidos"

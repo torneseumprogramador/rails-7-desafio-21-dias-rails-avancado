@@ -55,3 +55,22 @@
   text-align: right;
   padding: 10px;
  }
+
+ .margin-devise{
+  margin: 10px 0px 0px 0px
+ }
+
+
+
+ .sair{
+  border-radius: 10px;
+  color: #6ffb6f;
+  position: absolute;
+  z-index: 9999;
+  top: 2%;
+  right: 1%;
+  background: #00000078;
+  display: block;
+  text-align: right;
+  padding: 5px 10px 5px 10px;
+ }

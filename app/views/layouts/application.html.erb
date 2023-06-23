@@ -25,6 +25,13 @@
     <div id="page-wrapper">
      	<!-- Wrapper -->
         <div id="wrapper">
+
+			<% if user_signed_in? %>
+				<!--a href="/sair" class="sair" rel="nofollow" data-excluir="<%= destroy_user_session_path %>" data-redirect="/" >Sair</a-->
+				<%#= link_to "Sair", destroy_user_session_path, method: :delete, , class: "sair" %>
+				<%= link_to "Sair", destroy_user_session_path, method: :delete, "data-confirm": "Tem certeza que deseja sair?", class: "sair" %>
+			<% end %>
+
 			<% if notice.present? %>
 				<p class="notice"><%= notice %></p>
 			<% end %>

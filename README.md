@@ -13,11 +13,17 @@
 - concerns
 - cookies
 
-# a fazer
+
 - device (e manual)
+
+
+# a fazer
+- mailer
+- rake
 - gems
 - rails API
 - rotas encadeadas
 - token jwt
 - trabalhando com fila .... 
+- testes
 - outros da ementa ....

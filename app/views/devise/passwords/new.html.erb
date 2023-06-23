@@ -1,0 +1,27 @@
+<section class="panel banner right">
+	<div class="content color0 span-3-75">
+
+    <h2>Esqueceu sua senha?</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="actions margin-devise">
+        <%= f.submit "Me envia as instruções para a nova senha" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+
+  </div>
+
+  <div class="image filtered span-1-75" data-position="25% 25%">
+    <img src="/images/pic01.jpg" alt="" />
+  </div>
+</section>

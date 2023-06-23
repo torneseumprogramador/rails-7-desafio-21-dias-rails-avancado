@@ -59,13 +59,13 @@ class ClientesController < ApplicationLoginController
 
     @clientes = repo.todos(params[:pagina])
 
-    respond_to do |format|
-      format.turbo_stream { 
-        render turbo_stream: turbo_stream.append(:clientes, partial: 'clientes/clientes_hotwire', locals: { clientes: @clientes })
-      }
+    # respond_to do |format|
+    #   format.turbo_stream { 
+    #     render turbo_stream: turbo_stream.append(:clientes, partial: 'clientes/clientes_hotwire', locals: { clientes: @clientes })
+    #   }
 
-      format.html { render :index }
-    end
+    #   format.html { render :index }
+    # end
   end
 
 

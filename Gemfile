@@ -46,6 +46,10 @@ gem "bootsnap", require: false
 
 gem 'jwt'
 
+gem 'devise'
+
+# gem 'rails-ujs'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
