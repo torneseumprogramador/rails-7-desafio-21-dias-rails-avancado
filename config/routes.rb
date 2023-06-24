@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :useres
+  # devise_for :useres
+  devise_for :useres, controllers: { sessions: 'users/sessions' }
+
   resources :pedido_produtos
   resources :pedidos
   resources :produtos
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'stimulus', to: 'spa#stimulus'
   get 'jquery', to: 'spa#jquery'
+
 
   ## desabilitado para usar o devise
   # get 'login', to: 'login#index'
