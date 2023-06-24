@@ -46,7 +46,12 @@ gem "bootsnap", require: false
 
 gem 'jwt'
 
-gem 'devise'
+# gem 'devise'
+gem 'orm_adapter'
+gem 'responders'
+gem 'warden'
+gem 'bcrypt'
+gem 'devise', '4.9.2', path: 'vendor/devise-4.9.2'
 
 # gem 'rails-ujs'
 

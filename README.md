@@ -11,14 +11,12 @@
 - activerecord avançado
 - validations
 - concerns
-- cookies
+- cookies (e manual)
+- device 
 
-
-- device (e manual)
-
+- mailer
 
 # a fazer
-- mailer
 - rake
 - gems
 - rails API

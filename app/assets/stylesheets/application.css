@@ -56,6 +56,20 @@
   padding: 10px;
  }
 
+
+ .alert{
+  border-radius: 10px;
+  color: #DAA520;
+  position: absolute;
+  z-index: 9999;
+  top: 4%;
+  right: 2%;
+  background: #00000078;
+  display: block;
+  text-align: right;
+  padding: 10px;
+ }
+
  .margin-devise{
   margin: 10px 0px 0px 0px
  }
