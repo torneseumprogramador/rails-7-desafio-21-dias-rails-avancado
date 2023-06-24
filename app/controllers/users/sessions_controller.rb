@@ -18,10 +18,13 @@ class Users::SessionsController < Devise::SessionsController
     debugger
     # We actually need to hardcode this as Rails default responder doesn't
     # support returning empty response on GET request
-    respond_to do |format|
-      format.all { head :no_content }
-      format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name), status: Devise.responder.redirect_status }
-    end
+    # respond_to do |format|
+    #   format.all { head :no_content }
+    #   debugger
+    #   format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name), status: Devise.responder.redirect_status }
+    # end
+
+    redirect_to after_sign_out_path_for(resource_name), status: Devise.responder.redirect_status
   end
 
   # def after_sign_out_path_for(resource_or_scope)
