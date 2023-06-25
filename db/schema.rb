@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_23_082434) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_25_082440) do
   create_table "clientes", charset: "utf8mb3", force: :cascade do |t|
     t.string "nome", limit: 150
     t.string "telefone", limit: 20
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_23_082434) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "ativo", default: true
+    t.string "email"
   end
 
   create_table "fornecedores", charset: "utf8mb3", force: :cascade do |t|

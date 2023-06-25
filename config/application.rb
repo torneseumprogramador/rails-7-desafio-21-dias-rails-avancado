@@ -24,6 +24,7 @@ module LayoutRails7
     # config.autoload_paths += %W(#{config.root}/app/entidades)
     # config.autoload_paths += %W(#{config.root}/app/repositorios)
 
+
     config.after_initialize do
       Devise::Controllers::Helpers.class_eval do
         def after_sign_out_path_for(resource_or_scope)

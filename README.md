@@ -12,13 +12,10 @@
 - validations
 - concerns
 - cookies
-
-
 - device (e manual)
-
+- mailer
 
 # a fazer
-- mailer
 - rake
 - gems
 - rails API
