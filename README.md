@@ -14,9 +14,9 @@
 - cookies
 - device (e manual)
 - mailer
+- rake
 
 # a fazer
-- rake
 - gems
 - rails API
 - rotas encadeadas
