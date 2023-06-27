@@ -15,9 +15,9 @@
 - device (e manual)
 - mailer
 - rake
+- gems
 
 # a fazer
-- gems
 - rails API
 - rotas encadeadas
 - token jwt

@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/torneseumprogramador/desafio_de_rails_avancado_gem.git
+  revision: eb38420c9ce98c9f272977b76d02b2da40dc246c
+  specs:
+    desafio_de_rails_avancado (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -249,6 +255,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  desafio_de_rails_avancado!
   devise
   faker
   importmap-rails

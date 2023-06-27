@@ -3,6 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
+# forma 1 - publicando no rubygems
+# gem 'desafio_de_rails_avancado', '~> 0.1.0'
+
+# forma 2 - Deixando gem no vendor
+# gem 'desafio_de_rails_avancado', '~> 0.1.0', path: 'vendor/gems/desafio_de_rails_avancado_gem'
+
+# forma 3 - Deixando gem no github
+gem 'desafio_de_rails_avancado', git: 'https://github.com/torneseumprogramador/desafio_de_rails_avancado_gem.git'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
