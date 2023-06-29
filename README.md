@@ -16,11 +16,11 @@
 - mailer
 - rake
 - gems
-
-# a fazer
 - rails API
 - rotas encadeadas
+
+# a fazer
 - token jwt
-- trabalhando com fila .... 
 - testes
+- trabalhando com fila .... 
 - outros da ementa ....
