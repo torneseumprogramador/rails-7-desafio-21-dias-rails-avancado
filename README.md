@@ -18,9 +18,11 @@
 - gems
 - rails API
 - rotas encadeadas
+- token jwt
+- swagger
 
 # a fazer
-- token jwt
 - testes
+
 - trabalhando com fila .... 
 - outros da ementa ....
