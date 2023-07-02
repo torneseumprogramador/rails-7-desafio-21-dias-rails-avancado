@@ -20,9 +20,8 @@
 - rotas encadeadas
 - token jwt
 - swagger
-
-# a fazer
 - testes
 
+# a fazer
 - trabalhando com fila .... 
 - outros da ementa ....
