@@ -33,4 +33,5 @@
 - docker
 - docker compose
 - Deploy
-- outros da ementa ....
+- active record, commit & rollback
+- microserviços (uma API lendo dados de outra API)
