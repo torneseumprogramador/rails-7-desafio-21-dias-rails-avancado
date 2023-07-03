@@ -21,7 +21,16 @@
 - token jwt
 - swagger
 - testes
+- trabalhando com fila .... 
+  - Sidekiq - ok
+  - SQS
+  - Kafka
+  - RabbbitMQ
+  - Azure Bus
 
 # a fazer
-- trabalhando com fila .... 
+- mongodb para rails
+- docker
+- docker compose
+- Deploy
 - outros da ementa ....

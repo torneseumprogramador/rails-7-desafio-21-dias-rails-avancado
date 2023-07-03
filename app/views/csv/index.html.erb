@@ -1,0 +1,17 @@
+<section class="panel banner right">
+	<div class="content color0 span-3-75">
+        <h1>Upload CSV</h1>
+        <hr style="margin: 0px;">
+        
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <label for="file">Selecione um arquivo:</label>
+            <input type="file" name="file" id="file" accept=".csv">
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+	<div class="image filtered span-1-75" data-position="25% 25%">
+        <img src="/images/pic01.jpg" alt="" />
+    </div>
+</section>

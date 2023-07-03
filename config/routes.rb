@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   # devise_for :useres
   devise_for :useres, controllers: { sessions: 'users/sessions' }
@@ -11,6 +12,13 @@ Rails.application.routes.draw do
   get 'stimulus', to: 'spa#stimulus'
   get 'jquery', to: 'spa#jquery'
 
+  get 'csv', to: 'csv#index'
+  post 'upload', to: 'csv#upload'
+
+  Rails.application.routes.draw do
+    # Outras rotas da sua aplicação
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   ## desabilitado para usar o devise
   # get 'login', to: 'login#index'
