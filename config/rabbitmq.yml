@@ -1,0 +1,11 @@
+development:
+  host: 'localhost'  # Substitua pelo endereço do servidor RabbitMQ
+  port: 5672  # Substitua pela porta do servidor RabbitMQ
+  vhost: '/'  # Substitua pelo virtual host do RabbitMQ (opcional)
+
+production:
+  host: <%= ENV['RABBIT_MQ_SERVER'] %>
+  port: 5672  # Substitua pela porta do servidor RabbitMQ
+  username: <%= ENV['RABBIT_MQ_USER'] %>  # Substitua pelo nome de usuário do RabbitMQ
+  password: <%= ENV['RABBIT_MQ_PASS'] %>  # Substitua pela senha do RabbitMQ
+  vhost: '/'  # Substitua pelo virtual host do RabbitMQ (opcional)

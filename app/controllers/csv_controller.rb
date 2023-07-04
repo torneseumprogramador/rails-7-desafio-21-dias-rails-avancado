@@ -25,8 +25,9 @@ class CsvController < ApplicationController
       # Move o arquivo temporário para o diretório de destino
       FileUtils.mv(file_path, destination_file)
 
-      # ClientesCsvWorker.perform_async(destination_file)
-      KafkaProducer.new.produce(destination_file)
+      # ClientesCsvWorker.perform_async(destination_file) # producer sidekiq
+      # KafkaProducer.new.produce(destination_file) # producer kafka
+      RabbitMqProducer.new.produce(destination_file) # producer rabbitMQ
       flash["notice"] = 'Estamos processando a informação!'
     else
       flash["error"] = 'Por favor, selecione um arquivo CSV válido.'

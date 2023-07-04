@@ -2,3 +2,9 @@
 :concurrency: 5
 :queues:
   - default
+
+development:
+  redis: 'redis://localhost:6379/0' 
+
+production:
+  redis: <%= ENV['SIDEKIQ_REDIS_SERVER'] %>

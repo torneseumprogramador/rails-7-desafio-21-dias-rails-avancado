@@ -10,9 +10,10 @@ class KafkaConsumer
 
   def consume
     @consumer.subscribe(@topic)
+    puts "Consumidor Kafka iniciado, aguardando mensagens"
 
     @consumer.each_message do |message|
-      puts "Processando csv clientes #{message.value}"
+      puts "Processando csv clientes no Kafka #{message.value}"
       CsvClientes.processar(message.value)
     end
   ensure

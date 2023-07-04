@@ -24,7 +24,7 @@
 - trabalhando com fila .... 
   - Sidekiq - ok
   - Kafka - ok
-  - RabbbitMQ - 
+  - RabbbitMQ - ok
   - SQS
   - Azure Bus
 

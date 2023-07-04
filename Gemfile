@@ -26,6 +26,8 @@ gem 'redis-client'
 
 gem 'ruby-kafka'
 
+gem 'bunny' # para uso do rabbitMQ
+
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 
