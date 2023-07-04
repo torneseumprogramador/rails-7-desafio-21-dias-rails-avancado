@@ -34,4 +34,5 @@
 - docker
 - docker compose
 - Deploy
+- Deploy - Capistrano
 - microserviços (uma API lendo dados de outra API)
