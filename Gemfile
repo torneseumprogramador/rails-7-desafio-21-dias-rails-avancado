@@ -24,6 +24,8 @@ gem 'sidekiq'
 
 gem 'redis-client'
 
+gem 'ruby-kafka'
+
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 

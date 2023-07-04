@@ -23,15 +23,15 @@
 - testes
 - trabalhando com fila .... 
   - Sidekiq - ok
+  - Kafka - ok
+  - RabbbitMQ - 
   - SQS
-  - Kafka
-  - RabbbitMQ
   - Azure Bus
 
 # a fazer
+- active record, commit & rollback
 - mongodb para rails
 - docker
 - docker compose
 - Deploy
-- active record, commit & rollback
 - microserviços (uma API lendo dados de outra API)

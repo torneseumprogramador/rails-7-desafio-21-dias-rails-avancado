@@ -1,0 +1,7 @@
+development:
+  bootstrap_servers: 'localhost:9092'  # Substitua pelo endereço e porta do seu cluster Kafka
+  topic: 'desafio_rails'  # Substitua pelo nome do tópico que você deseja usar
+
+production:
+  bootstrap_servers: <%= ENV['KAFKA_BOOTSTRAP_SERVERS'] %>
+  topic: <%= ENV['KAFKA_TOPIC'] %>

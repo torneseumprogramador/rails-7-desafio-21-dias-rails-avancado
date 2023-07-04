@@ -102,6 +102,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    digest-crc (0.6.5)
+      rake (>= 12.0.0, < 14.0.0)
     erubi (1.12.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
@@ -205,6 +207,8 @@ GEM
     rexml (3.2.5)
     ruby-graphviz (1.2.5)
       rexml
+    ruby-kafka (1.5.0)
+      digest-crc
     ruby-openai (4.2.0)
       faraday (>= 1)
       faraday-multipart (>= 1)
@@ -274,6 +278,7 @@ DEPENDENCIES
   rails (~> 7.0.5)
   rails-erd
   redis-client
+  ruby-kafka
   ruby-openai
   selenium-webdriver
   sidekiq
