@@ -31,8 +31,12 @@
 # a fazer
 - active record, commit & rollback
 - mongodb para rails
+
 - docker
 - docker compose
+
 - Deploy
 - Deploy - Capistrano
+
 - microserviços (uma API lendo dados de outra API)
+- encerramento

@@ -75,6 +75,18 @@ GEM
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     amq-protocol (2.3.2)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.783.0)
+    aws-sdk-core (3.176.1)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.5)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-sqs (1.59.0)
+      aws-sdk-core (~> 3, >= 3.176.0)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.6.0)
+      aws-eventstream (~> 1, >= 1.0.2)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -130,6 +142,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jmespath (1.6.2)
     jwt (2.7.1)
     loofah (2.21.3)
       crass (~> 1.0.2)
@@ -273,6 +286,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
+  aws-sdk-sqs
   bootsnap
   bunny
   capybara

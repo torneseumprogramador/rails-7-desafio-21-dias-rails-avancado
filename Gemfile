@@ -28,6 +28,8 @@ gem 'ruby-kafka'
 
 gem 'bunny' # para uso do rabbitMQ
 
+gem 'aws-sdk-sqs'
+
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 

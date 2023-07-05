@@ -1,0 +1,9 @@
+development:
+  access_key: 'SUA_KEY'
+  secret_key: 'SEU_SECRET'
+  region: 'SUA_REGIAO'
+
+production:
+  access_key: <%= ENV['AWS_ACCESS_KEY'] %>
+  secret_key: <%= ENV['AWS_SECRET_KEY'] %>
+  region: <%= ENV['AWS_REGION'] %>
