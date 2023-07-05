@@ -1,0 +1,9 @@
+development:
+  tenant_id: "xxxxxxx"
+  client_id: "xxxxxxxx"
+  client_secret: "xxxxxxxxx"
+
+production:
+  tenant_id: <%= ENV['AZURE_TENANT_ID'] %>
+  client_id: <%= ENV['AZURE_CLIENT'] %>
+  client_secret: <%= ENV['AZURE_CLIENT_SECRET'] %>

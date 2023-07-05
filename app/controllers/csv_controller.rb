@@ -28,7 +28,8 @@ class CsvController < ApplicationController
       # ClientesCsvWorker.perform_async(destination_file) # producer sidekiq
       # KafkaProducer.new.produce(destination_file) # producer kafka
       # RabbitMqProducer.new.produce(destination_file) # producer rabbitMQ
-      SqsProducer.new.produce(destination_file) # producer SQS
+      # SqsProducer.new.produce(destination_file) # producer SQS
+      AzureBusProducer.new.produce(destination_file) # producer Azure Bus
       flash["notice"] = 'Estamos processando a informação!'
     else
       flash["error"] = 'Por favor, selecione um arquivo CSV válido.'

@@ -30,6 +30,8 @@ gem 'bunny' # para uso do rabbitMQ
 
 gem 'aws-sdk-sqs'
 
+gem 'rest-client'
+
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 
