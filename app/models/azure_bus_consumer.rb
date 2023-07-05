@@ -18,8 +18,9 @@ class AzureBusConsumer
       if response.code == 200
         message = JSON.parse(response.body)
 
-        puts "Processando mensagem: #{message['messageId']}"
-        # Implement your message processing logic here
+        debugger
+        puts "Processando csv clientes no Kafka #{message['value']}"
+        CsvClientes.processar(message['value'])
 
         delete_message(message['messageId'])
       else
