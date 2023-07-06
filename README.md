@@ -25,8 +25,8 @@
   - Sidekiq - ok
   - Kafka - ok
   - RabbbitMQ - ok
-  - SQS
-  - Azure Bus
+  - SQS - ok
+  - Azure Bus - Acesso negado
 
 # a fazer
 - active record, commit & rollback

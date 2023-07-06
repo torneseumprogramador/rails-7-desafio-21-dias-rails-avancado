@@ -1,0 +1,45 @@
+<!-- Panel (Banner) -->
+<section class="panel banner right">
+	<h1>Lista de Alunos</h1>
+
+	<form action="<%= alunos_path %>" method="GET" style="text-align:left">
+		<div class="form-group" style="display:inline-block;width: 50%">
+			<label for="search_nome">Buscar por Nome:</label>
+			<input type="text" name="nome" id="search_nome" class="form-control">
+		</div>
+		<div class="form-group" style="display:inline-block;width: calc(49% - 150px)">
+			<label for="search_nome">Buscar por Idade:</label>
+			<input type="number" name="idade" id="search_idade" class="form-control">
+		</div>
+		<button style="display:inline-block;width: 145px;height: 34px;padding: 0px 18px;margin-top: -6px;" type="submit" class="btn btn-primary">Buscar</button>
+	</form>
+
+	<hr>
+
+	<table class="table">
+		<thead>
+			<tr>
+			<th>Nome</th>
+			<th>Matrícula</th>
+			<th>Idade</th>
+			<th>Email</th>
+			<th>Notas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @alunos.each do |aluno| %>
+			<tr>
+				<td><%= aluno.nome %></td>
+				<td><%= aluno.matricula %></td>
+				<td><%= aluno.idade %></td>
+				<td><%= aluno.email %></td>
+				<td>
+				<% aluno.notas.each do |nota| %>
+					<%= nota.nota %> - <%= nota.data.strftime("%d/%m/%Y") %><br>
+				<% end %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</section>

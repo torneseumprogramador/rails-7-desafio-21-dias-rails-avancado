@@ -32,6 +32,8 @@ gem 'aws-sdk-sqs'
 
 gem 'rest-client'
 
+gem 'mongoid', '~> 7.0'
+
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 

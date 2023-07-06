@@ -1,0 +1,15 @@
+development:
+  clients:
+    default:
+      database: desafio_rails
+      hosts:
+        - localhost:27017
+
+production:
+  clients:
+    default:
+      database: <%= ENV['MONGODB_DATABASE'] %>
+      hosts:
+        - <%= ENV['MONGODB_HOST'] %>:27017
+      username: <%= ENV['MONGODB_USERNAME'] %>
+      password: <%= ENV['MONGODB_PASSWORD'] %>

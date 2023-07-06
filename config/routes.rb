@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :pedidos
   resources :produtos
   resources :clientes
+
+  resources :alunos
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get 'stimulus', to: 'spa#stimulus'
