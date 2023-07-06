@@ -38,8 +38,7 @@ class AlunosController < ApplicationController
     # faça todo o crud de alunos / notas em base de tudo que vc aprendeu anteriormente no desafio de rails https://www.torneseumprogramador.com.br/cursos/ruby_avancado/aulas
     # veja a aula de mongodb https://comunidadefechadatorneseumprog.club.hotmart.com/lesson/3ea5AL5Beg/23-or-aprendendo-banco-de-dados-nosql-cassandra-e-mongodb 
     # para que vc possa entender mais sobre normalização e denormalização
-    # Mande um pull request para meu repo
-
+    # Mande um pull request para meu repo https://github.com/torneseumprogramador/rails-7-desafio-21-dias-rails-avancado
 
     @alunos = Aluno.all
     @alunos = @alunos.where(nome: /#{params[:nome]}/i) if params[:nome].present?

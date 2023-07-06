@@ -28,10 +28,10 @@
   - SQS - ok
   - Azure Bus - Acesso negado
 
-# a fazer
 - active record, commit & rollback
 - mongodb para rails
 
+# a fazer
 - docker
 - docker compose
 
