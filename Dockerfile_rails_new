@@ -1,0 +1,19 @@
+FROM ruby:latest
+
+RUN gem install bundler
+RUN gem install rails
+
+# # Crie uma nova aplicação Rails
+RUN rails new minha_app
+
+# # Defina o diretório de trabalho para a nova aplicação Rails
+WORKDIR minha_app
+
+RUN rails g scaffold alunos nome:string matricula:integer
+RUN rake db:migrate
+
+# Exponha a porta padrão do Rails
+EXPOSE 3000
+
+# Configure o comando padrão a ser executado
+CMD ["rails", "server", "-b", "0.0.0.0"]

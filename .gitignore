@@ -9,6 +9,8 @@
 aws_sqs.yml
 azure_service_bus.yml
 
+volume_mysql
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*

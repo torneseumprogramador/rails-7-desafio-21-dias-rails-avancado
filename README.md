@@ -30,10 +30,10 @@
 
 - active record, commit & rollback
 - mongodb para rails
-
-# a fazer
 - docker
 - docker compose
+
+# a fazer
 
 - Deploy
 - Deploy - Capistrano
