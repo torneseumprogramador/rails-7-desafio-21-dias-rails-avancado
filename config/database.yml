@@ -16,4 +16,7 @@ test:
 
 production:
   <<: *default
-  database: desafio_rails_production
+  database: <%= ENV['DATABASE'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASS'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
