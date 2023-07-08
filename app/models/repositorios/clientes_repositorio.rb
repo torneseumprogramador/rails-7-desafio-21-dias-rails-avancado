@@ -5,7 +5,7 @@ module Repositorios
   class ClientesRepositorio
     def initialize
 
-      database_config = YAML.safe_load(File.read("#{Rails.root}/config/database.yml"), aliases: true)
+      database_config = YAML.safe_load(ERB.new(File.read("#{Rails.root}/config/database.yml")).result, aliases: true)
       database_config = database_config[Rails.env] # Escolha o ambiente apropriado aqui
 
       @client = Mysql2::Client.new(
