@@ -18,5 +18,5 @@ production:
   <<: *default
   database: <%= ENV['DATABASE'] %>
   username: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASS'] %>
+  password: "<%= ENV['DATABASE_PASS'] %>"
   host: <%= ENV['DATABASE_HOST'] %>

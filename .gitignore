@@ -11,6 +11,8 @@ azure_service_bus.yml
 
 volume_mysql
 
+credentials.yml.enc
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
