@@ -32,11 +32,10 @@
 - mongodb para rails
 - docker
 - docker compose
-
-# a fazer
-
 - Deploy
 - Deploy - Capistrano
+
+# a fazer
 
 - microserviços (uma API lendo dados de outra API)
 - encerramento
